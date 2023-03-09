@@ -22,25 +22,23 @@ export default function Page() {
       return null;
     }
   }
+  let Token = getValueFor("token");
   useEffect(() => {
     async function check() {
       let token = await getValueFor("token");
       if (token) {
-        router.push("/home");
+        router.replace("/home");
       } else {
         setReady(true);
+        router.replace("/login");
       }
     }
     check();
-  }, []);
+  }, [Token]);
 
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
       {!isReady && <SplashScreen />}
-      <Text>Welcome</Text>
-      <Pressable onPress={() => router.push("/login")}>
-        <Text>Sign In</Text>
-      </Pressable>
     </View>
   );
 }
