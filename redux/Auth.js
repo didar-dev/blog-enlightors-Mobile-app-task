@@ -1,21 +1,24 @@
 import { createSlice } from "@reduxjs/toolkit";
+import * as SecureStore from "expo-secure-store";
+
 const initialState = {
   Auth: null,
 };
+
 export const userSlice = createSlice({
   name: "Auth",
   initialState,
   reducers: {
-    login: (state, action) => {
+    loginUser: (state, action) => {
       state.Auth = action.payload;
     },
     signout: (state) => {
       state.Auth = null;
-      localStorage.removeItem("token");
+      SecureStore.deleteItemAsync("token");
     },
   },
 });
 
-export const { login, signout } = userSlice.actions;
+export const { loginUser, signout } = userSlice.actions;
 
 export default userSlice.reducer;
