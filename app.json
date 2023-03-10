@@ -1,15 +1,23 @@
 {
   "expo": {
-    "ios": {
-      "config": {
-        "usesNonExemptEncryption": false
-      }
-    },
+    "ios": {},
     "scheme": "acme",
     "web": {
       "bundler": "metro"
     },
     "name": "enlightors",
-    "slug": "enlightors"
+    "slug": "enlightors",
+    "extra": {
+      "eas": {
+        "projectId": "517a01fc-10f2-40bd-b3cc-ca7ac95360aa"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/517a01fc-10f2-40bd-b3cc-ca7ac95360aa"
+    },
+    "android": {}
   }
 }
