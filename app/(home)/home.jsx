@@ -14,6 +14,8 @@ import { AddArticles } from "../../redux/Articles";
 import { useRouter } from "expo-router";
 import axios from "axios";
 import { Grid, List } from "./article/Cards";
+import { Entypo } from "@expo/vector-icons";
+
 export default function home() {
   const windowWidth = Dimensions.get("window").width;
   const [isgrid, setisGrid] = useState(true);
@@ -50,24 +52,36 @@ export default function home() {
           headerShown: true,
           title: "Home",
           headerRight: () => (
-            <Button
+            <Entypo
               onPress={() => {
                 dispatch(signout());
                 router.replace("/login");
               }}
-              title="Logout"
-              color="#fff"
+              name="log-out"
+              size={24}
+              color="white"
             />
           ),
-          headerLeft: () => (
-            <Button
-              onPress={() => {
-                setisGrid(!isgrid);
-              }}
-              title={isgrid ? "List" : "Grid"}
-              color="#fff"
-            />
-          ),
+          headerLeft: () =>
+            isgrid ? (
+              <Entypo
+                onPress={() => {
+                  setisGrid(!isgrid);
+                }}
+                name="list"
+                size={26}
+                color="white"
+              />
+            ) : (
+              <Entypo
+                onPress={() => {
+                  setisGrid(!isgrid);
+                }}
+                name="grid"
+                size={26}
+                color="white"
+              />
+            ),
         }}
       />
       <View
