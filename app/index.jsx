@@ -1,17 +1,16 @@
-import { View, Text, Pressable } from "react-native";
+import { View, ActivityIndicator } from "react-native";
 import { useSelector, useDispatch } from "react-redux";
 import { useRouter, useSegments } from "expo-router";
-import { SplashScreen } from "expo-router";
 import React, { useEffect, useState } from "react";
 import { loginUser } from "../redux/Auth";
+import { Stack } from "expo-router";
+
 import axios from "axios";
 import * as SecureStore from "expo-secure-store";
 export default function Page() {
   const [isReady, setReady] = useState(false);
-  const segments = useSegments();
   const dispatch = useDispatch();
   const router = useRouter();
-  const Auth = useSelector((state) => state.Auth.Auth);
 
   async function getValueFor(key) {
     let result = await SecureStore.getItemAsync(key);
@@ -57,7 +56,13 @@ export default function Page() {
   checkToken();
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      {!isReady && <SplashScreen />}
+      <Stack.Screen
+        options={{
+          headerShown: false,
+          title: "Home",
+        }}
+      />
+      {isReady ? null : <ActivityIndicator size="large" color="#ff9c0c" />}
     </View>
   );
 }

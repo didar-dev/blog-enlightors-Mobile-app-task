@@ -43,7 +43,7 @@ export default function home() {
       }
     }
     getArticles();
-  }, []);
+  }, [Auth]);
   return (
     <View style={styles.container}>
       <Stack.Screen
