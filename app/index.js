@@ -37,7 +37,13 @@ export default function Page() {
           },
         });
         if (attempt.status === 200) {
-          dispatch(loginUser(attempt.data.user));
+          dispatch(
+            loginUser({
+              token: token,
+              user: attempt.data.user,
+            })
+          );
+
           router.replace("/home");
         }
       } catch (error) {
