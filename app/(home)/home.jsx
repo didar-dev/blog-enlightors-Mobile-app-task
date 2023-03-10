@@ -35,7 +35,6 @@ export default function home() {
             Authorization: `Bearer ${Auth?.token}`,
           },
         });
-        console.log(attempt);
         if (attempt.status === 200) {
           dispatch(AddArticles(attempt.data.articles));
         }

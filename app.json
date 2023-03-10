@@ -1,23 +1,38 @@
 {
   "expo": {
-    "ios": {},
-    "scheme": "acme",
+    "ios": {
+      "bundleIdentifier": "com.didar.dev.enlightors"
+    },
+    "scheme": "enlightors",
     "web": {
       "bundler": "metro"
     },
     "name": "enlightors",
+    "icon": "./assets/icon.png",
+
     "slug": "enlightors",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
     "extra": {
       "eas": {
-        "projectId": "517a01fc-10f2-40bd-b3cc-ca7ac95360aa"
+        "projectId": "5971986a-4c5d-45d4-9331-cce09fbc2cc7"
       }
     },
     "runtimeVersion": {
       "policy": "sdkVersion"
     },
-    "updates": {
-      "url": "https://u.expo.dev/517a01fc-10f2-40bd-b3cc-ca7ac95360aa"
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.didar.dev.enlightors"
     },
-    "android": {}
+    "updates": {
+      "url": "https://u.expo.dev/5971986a-4c5d-45d4-9331-cce09fbc2cc7"
+    }
   }
 }
