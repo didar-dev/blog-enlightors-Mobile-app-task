@@ -26,7 +26,11 @@ export default function Article() {
           height: 240,
         }}
         source={{ uri: `https://www.lawa.best/api/${Article.image}` }}
-        placeholder={Article.image_blurhash}
+        placeholder={
+          Article.image_blurhash
+            ? Article.image_blurhash
+            : "LSED;i8^a0I:.mQ-VsNaozt7WBWB"
+        }
         contentFit="cover"
         transition={1000}
       />

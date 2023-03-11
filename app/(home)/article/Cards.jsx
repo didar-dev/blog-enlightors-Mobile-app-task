@@ -27,7 +27,11 @@ function Grid({ article }) {
           margin: 2,
         }}
         source={{ uri: `https://www.lawa.best/api/${article.image}` }}
-        placeholder={article.image_blurhash}
+        placeholder={
+          article.image_blurhash
+            ? article.image_blurhash
+            : "LSED;i8^a0I:.mQ-VsNaozt7WBWB"
+        }
         contentFit="cover"
         transition={1000}
       />
@@ -46,7 +50,11 @@ function List({ article }) {
       <Image
         style={{ width: 150, height: 100 }}
         source={{ uri: `https://www.lawa.best/api/${article.image}` }}
-        placeholder={article.image_blurhash}
+        placeholder={
+          article.image_blurhash
+            ? article.image_blurhash
+            : "LSED;i8^a0I:.mQ-VsNaozt7WBWB"
+        }
         contentFit="cover"
         transition={1000}
       />
