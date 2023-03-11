@@ -65,7 +65,7 @@ export default function home() {
             isgrid ? (
               <Entypo
                 onPress={() => {
-                  setisGrid(!isgrid);
+                  setisGrid((prev) => !prev);
                 }}
                 name="list"
                 size={26}
@@ -74,7 +74,7 @@ export default function home() {
             ) : (
               <Entypo
                 onPress={() => {
-                  setisGrid(!isgrid);
+                  setisGrid((prev) => !prev);
                 }}
                 name="grid"
                 size={26}
@@ -101,11 +101,7 @@ export default function home() {
             <FlatList
               data={Articles}
               renderItem={({ item }) => {
-                return isgrid ? (
-                  <Grid article={item} />
-                ) : (
-                  <List article={item} />
-                );
+                return <Grid article={item} />;
               }}
               keyExtractor={(item) => item.id}
               numColumns={2}
@@ -116,7 +112,7 @@ export default function home() {
           <FlatList
             data={Articles}
             renderItem={({ item }) => {
-              return isgrid ? <Grid article={item} /> : <List article={item} />;
+              return <List article={item} />;
             }}
             keyExtractor={(item) => item.id}
             numColumns={1}

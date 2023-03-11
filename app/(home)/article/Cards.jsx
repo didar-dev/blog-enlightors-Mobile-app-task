@@ -49,7 +49,7 @@ function List({ article }) {
     >
       <Image
         style={{ width: 150, height: 100 }}
-        source={{ uri: `https://www.lawa.best/api/${article.image}` }}
+        source={{ uri: `https://www.lawa.best/api/${article?.image}` }}
         placeholder={
           article.image_blurhash
             ? article.image_blurhash
