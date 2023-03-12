@@ -47,6 +47,7 @@ export default function Page() {
         }
       } catch (error) {
         console.log(error);
+        router.replace("/login");
       }
     } else {
       setReady(true);
